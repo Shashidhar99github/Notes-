@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Sticky Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:wght@400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>My Reading Notes</h1>
+            <p>Thoughts worth remembering...</p>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn success" id="exportBtn">📥 Export Notes</button>
+            <button class="control-btn danger" id="clearAllBtn">🗑️ Clear All</button>
+        </div>
+
+        <div class="note-count" id="noteCount">0 notes</div>
+
+        <div class="search-section">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search notes...">
+        </div>
+
+        <div class="input-section">
+            <input type="text" class="note-input" id="noteInput" placeholder="Add a new note..." maxlength="200">
+            <button class="add-btn" id="addBtn">Add Note</button>
+        </div>
+
+        <div class="notes-container" id="notesContainer">
+            <div class="empty-state">No notes yet. Start adding your thoughts!</div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal">
+            <h2>Delete Note?</h2>
+            <p>Are you sure you want to delete this note? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" id="cancelDelete">Cancel</button>
+                <button class="modal-btn confirm" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clear All Confirmation Modal -->
+    <div class="modal-overlay" id="clearAllModal">
+        <div class="modal">
+            <h2>Clear All Notes?</h2>
+            <p>Are you sure you want to delete all notes? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" id="cancelClearAll">Cancel</button>
+                <button class="modal-btn confirm" id="confirmClearAll">Delete All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Note Modal -->
+    <div class="modal-overlay edit-modal" id="editModal">
+        <div class="modal">
+            <h2>Edit Note</h2>
+            <textarea class="edit-textarea" id="editTextarea"></textarea>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" id="cancelEdit">Cancel</button>
+                <button class="modal-btn confirm" style="background-color: var(--soft-sage);" id="confirmEdit">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+</html>
